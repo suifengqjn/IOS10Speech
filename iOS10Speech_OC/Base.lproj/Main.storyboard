@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZgV-Ca-BHH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqF-s4-qB3">
+                                <frame key="frameInset" minX="79" minY="126" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="实时语音识别"/>
+                                <connections>
+                                    <segue destination="OM4-6T-VBz" kind="show" id="lqH-uM-f1s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gwq-Qw-2Eh">
+                                <frame key="frameInset" minX="79" minY="318" width="189" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="语音文件识别"/>
+                                <connections>
+                                    <segue destination="GfB-2f-8Uu" kind="show" id="prG-zK-SiH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="SDs-zq-rm3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952.79999999999995" y="-559.07046476761627"/>
+        </scene>
+        <!--Speech Controller-->
+        <scene sceneID="yRq-VZ-gmP">
+            <objects>
+                <viewController id="OM4-6T-VBz" customClass="SpeechController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PVT-3m-cz3"/>
+                        <viewControllerLayoutGuide type="bottom" id="DyC-ms-CDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xha-nr-9ri">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Click the button and say some thing" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eSR-tO-QpZ">
+                                <frame key="frameInset" minX="39" minY="104" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9St-zU-dqJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bJH-CG-xM4"/>
+                                </constraints>
+                                <state key="normal" title="开始录音"/>
+                                <connections>
+                                    <action selector="startRecording:" destination="OM4-6T-VBz" eventType="touchUpInside" id="Nhr-tR-NCO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DyC-ms-CDc" firstAttribute="top" secondItem="9St-zU-dqJ" secondAttribute="bottom" constant="97" id="i0Q-Ph-Add"/>
+                            <constraint firstItem="9St-zU-dqJ" firstAttribute="leading" secondItem="xha-nr-9ri" secondAttribute="leading" constant="87" id="twI-Jm-Idk"/>
+                            <constraint firstAttribute="trailing" secondItem="9St-zU-dqJ" secondAttribute="trailing" constant="96" id="xQW-se-ONF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn" destination="9St-zU-dqJ" id="Pe6-a8-yeQ"/>
+                        <outlet property="textView" destination="eSR-tO-QpZ" id="c3B-Sw-8W6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzD-TX-iIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829.5999999999999" y="-777.66116941529242"/>
+        </scene>
+        <!--File View Controller-->
+        <scene sceneID="rhl-Am-94I">
+            <objects>
+                <viewController id="GfB-2f-8Uu" customClass="FileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sQa-OL-bcj"/>
+                        <viewControllerLayoutGuide type="bottom" id="PN3-HF-xRU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6KV-Jb-eJw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKt-DA-mLe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sZg-OU-nuv"/>
+                                </constraints>
+                                <state key="normal" title="开始识别"/>
+                                <connections>
+                                    <action selector="start:" destination="GfB-2f-8Uu" eventType="touchUpInside" id="jY9-4F-3lT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xKt-DA-mLe" secondAttribute="trailing" constant="108" id="1Lo-ZD-whf"/>
+                            <constraint firstItem="xKt-DA-mLe" firstAttribute="leading" secondItem="6KV-Jb-eJw" secondAttribute="leading" constant="86" id="OmN-sB-IhM"/>
+                            <constraint firstItem="PN3-HF-xRU" firstAttribute="top" secondItem="xKt-DA-mLe" secondAttribute="bottom" constant="120" id="YMo-ix-Mux"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAT-l5-HyU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1829.5999999999999" y="-45.42728635682159"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VTm-ay-yhc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZgV-Ca-BHH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="87G-W2-RBW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="HEh-IG-2Gf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nu6-bT-cxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="-559.07046476761627"/>
+        </scene>
+    </scenes>
+</document>
